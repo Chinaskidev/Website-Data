@@ -6,7 +6,7 @@ from PIL import Image
 import json
 
 # Lista de páginas
-paginas = ["Español", "Inglés"]
+paginas = ["Español", "English"]
 
 # Selector de página
 pagina_seleccionada = st.sidebar.selectbox("Elige un idioma / Choose a language", paginas)
@@ -58,23 +58,16 @@ if pagina_seleccionada == "Español":
 
         with right_column:
             ruta_animacion = "animation/Animation - 1706591655553.json"
-            with open(ruta_animacion, "r") as f:
-                lottie_json = json.load(f)
-            st_lottie(lottie_json)
+            animacion = cargar_animacion(ruta_animacion)
+            st_lottie(animacion)
 
 # Contenido de la página en inglés
-elif pagina_seleccionada == "Inglés":
+elif pagina_seleccionada == "English":
     st.header("Hello, welcome to my website!")
     animation_path = "animation/Animation - 1706587782829.json"
 
-    # Function to load our animation
-    def load_animation(path):
-        with open(path, "r") as file:
-            animation = json.load(file)
-        return animation
-
     # Display the animation in the Streamlit app
-    animation = load_animation(animation_path)
+    animation = cargar_animacion(animation_path)
     st_lottie(animation, speed=1, loop=True)
 
     # Additional content in English
@@ -109,6 +102,5 @@ elif pagina_seleccionada == "Inglés":
 
         with right_column:
             animation_path = "animation/Animation - 1706591655553.json"
-            with open(animation_path, "r") as f:
-                lottie_json = json.load(f)
-            st_lottie(lottie_json)
+            animation = cargar_animacion(animation_path)
+            st_lottie(animation)
