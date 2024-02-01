@@ -5,6 +5,16 @@ from streamlit_lottie import st_lottie
 from PIL import Image
 import json
 
+# Ruta local a la imagen de encabezado
+imagen_cabecera = "animation/sidebyside.png"
+
+# Cargar y mostrar la imagen de encabezado
+image = Image.open(imagen_cabecera)
+st.image(image, use_column_width=True)
+
+# Agregar una línea divisoria
+st.write("---")
+
 # Lista de páginas
 paginas = ["Español", "English"]
 
@@ -19,7 +29,8 @@ def cargar_animacion(ruta):
 
 # Contenido de la página en español
 if pagina_seleccionada == "Español":
-    st.header("¡Hola, bienvenido a mi sitio web!")
+    st.header("Ciencia de Datos")
+    
     ruta_animacion = "animation/Animation - 1706587782829.json"
 
     # Mostrar la animación en la aplicación de Streamlit
@@ -29,8 +40,9 @@ if pagina_seleccionada == "Español":
     # Contenido adicional en español
     with st.container():
         st.markdown("""
-        # Ciencia de Datos
-        ¡Hola y gracias por visitar mi página web. Me llamo Juan Carlos V, pero mi familia me llama Carlos o Charles.
+    
+        
+        ¡Hola, bienvenido a mi sitio web!. Me llamo Juan Carlos V, pero mi familia me llama Carlos o Charles.
 
         Aquí encontrarás una muestra de algunos de los proyectos que he desarrollado a lo largo de mi carrera como científico de datos.
 
@@ -63,7 +75,8 @@ if pagina_seleccionada == "Español":
 
 # Contenido de la página en inglés
 elif pagina_seleccionada == "English":
-    st.header("Hello, welcome to my website!")
+    st.header("Data Science")
+    
     animation_path = "animation/Animation - 1706587782829.json"
 
     # Display the animation in the Streamlit app
@@ -73,7 +86,7 @@ elif pagina_seleccionada == "English":
     # Additional content in English
     with st.container():
         st.markdown("""
-        # Data Science
+        
         Hello and thank you for visiting my website. My name is Juan Carlos V, but my family calls me Carlos or Charles.
         
         Here you will find a sample of some of the projects I have developed throughout my career as a data scientist.
