@@ -1,15 +1,11 @@
 import streamlit as st
-import requests
-import streamlit_lottie as stl
-from streamlit_lottie import st_lottie
 from PIL import Image
 import json
+from streamlit_lottie import st_lottie
 
-# Ruta local a la imagen de encabezado
-imagen_cabecera = "animation/sidebyside.png"
 
 # Page Setup 
-#Image In Sidebar 
+# Image In Sidebar 
 with st.sidebar.container():
     image = Image.open(r"animation/sidebymanos.png")  
     st.image(image, use_column_width=True)
@@ -26,17 +22,15 @@ def cargar_animacion(ruta_animacion):
         data = json.load(f)
     return data
 
-# Navegación a la página adicional seleccionada
-
 # Crear un objeto de estado de sesión si no existe
 def get_state():
     if 'get' not in dir(st.session_state):
         st.session_state['page'] = 'Home'
     return st.session_state
 
+# Función para la página de inicio
 def home_page():
-    st.image(imagen_cabecera, use_column_width=True)
-
+    
     # Agregar una línea divisoria
     st.write("---")
 
@@ -62,20 +56,19 @@ def home_page():
             st.write("---")
             left_column, right_column = st.columns(2)
             with left_column:
-                st.header("Mi objetivo")
-                st.write(
-                    """
-                    Mi objetivo es compartir proyectos que demuestren mi experiencia en ciencia de datos, 
-                    destacando habilidades en Python, SQL y Google Cloud. 
-                    Busco colaborar en equipos donde pueda aplicar y expandir mis conocimientos en Machine Learning y explorar áreas como la Inteligencia Artificial y el Deep Learning.
-                    """
-                )
-                st.write("[Github](https://github.com/Chinaskidev)")
-
-            with right_column:
-                ruta_animacion = "animation/Animation - 1706591655553.json"
-                animacion = cargar_animacion(ruta_animacion)
-                st_lottie(animacion)
+                st.header("Contacto")
+                st.markdown("""
+                [Github](https://github.com/Chinaskidev)
+                [LinkedIn](https://www.linkedin.com/in/juancarlosvz/)
+                [Email](mailto:juangreen17@gmail.com)
+                """,
+                unsafe_allow_html=True
+            )
+    # imagen de abajo
+        with right_column:
+            ruta_animacion = "animation/Animation - 1706591655553.json"
+            animacion = cargar_animacion(ruta_animacion)
+            st_lottie(animacion)
 
     # Contenido de la página en inglés
     elif pagina_seleccionada == "English":
@@ -99,15 +92,14 @@ def home_page():
             st.write("---")
             left_column, right_column = st.columns(2)
             with left_column:
-                st.header("My Objective")
-                st.write(
-                    """
-                    My objective is to share projects that demonstrate my experience in data science, 
-                    highlighting skills in Python, SQL, and Google Cloud. 
-                    I seek to collaborate in teams where I can apply and expand my knowledge in Machine Learning and explore areas such as Artificial Intelligence and Deep Learning.
-                    """
-                )
-                st.write("[Github](https://github.com/Chinaskidev)")
+                st.header("Contact")
+                st.markdown("""
+                [Github](https://github.com/Chinaskidev)
+                [LinkedIn](https://www.linkedin.com/in/juancarlosvz/)
+                [Email](mailto:juangreen17@gmail.com)
+                """,
+                unsafe_allow_html=True
+            )
 
             with right_column:
                 animation_path = "animation/Animation - 1706591655553.json"
@@ -115,24 +107,6 @@ def home_page():
                 st_lottie(animation)
 
 # Funciones para mostrar las páginas de proyectos                
-def vecinonet_page():
-    st.write("Contenido de la página de VecinoNet")
-
-def steam_page():
-    st.write("Contenido de la página de Steam")
-
-def ecoride_page():
-    st.write("Contenido de la página de ECORIDE-NYC")
-
-# Obtener el estado de la sesión
-state = get_state()
-
-# Mostrar el selector de página en la barra lateral
-pagina_adicional_seleccionada = st.sidebar.selectbox("Proyectos", ["Home", "VecinoNet", "Steam", "ECORIDE-NYC"])
-
-# Actualizar el estado de la página
-state.page = pagina_adicional_seleccionada
-
 def vecinonet_page():
     if pagina_seleccionada == "Español":
         st.header("VecinoNet")
@@ -161,7 +135,7 @@ def vecinonet_page():
         imagen_vecino = "animation/vecinonet.png"
         st.image(imagen_vecino, use_column_width=True)
 
-# Funcion para mostrar la página de Steam
+# Función para mostrar la página de Steam
 def steam_page():
     if pagina_seleccionada == "Español":
         st.header("Steam")
@@ -193,7 +167,6 @@ def steam_page():
         st.image(imagen_steam, use_column_width=True)
 
 # Función para mostrar la página Dataminds
-
 def ecoride_page():
     if pagina_seleccionada == "Español":
         st.header("ECORIDE-NYC")
@@ -229,7 +202,14 @@ def ecoride_page():
         imagen_vecino = "animation/taxi.jpg"
         st.image(imagen_vecino, use_column_width=True)
 
+# Obtener el estado de la sesión
+state = get_state()
 
+# Mostrar el selector de página en la barra lateral
+pagina_adicional_seleccionada = st.sidebar.selectbox("Proyectos", ["Home", "VecinoNet", "Steam", "ECORIDE-NYC"])
+
+# Actualizar el estado de la página
+state.page = pagina_adicional_seleccionada
 
 # Mostrar la página correspondiente
 if state.page == 'Home':
@@ -240,6 +220,3 @@ elif state.page == 'Steam':
     steam_page()
 elif state.page == 'ECORIDE-NYC':
     ecoride_page()
-    
-    
-
