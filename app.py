@@ -206,7 +206,7 @@ def ecoride_page():
 state = get_state()
 
 # Mostrar el selector de página en la barra lateral
-pagina_adicional_seleccionada = st.sidebar.selectbox("Proyectos", ["Home", "VecinoNet", "Steam", "ECORIDE-NYC"])
+pagina_adicional_seleccionada = st.sidebar.selectbox("Proyectos/Projects", ["Home", "VecinoNet", "Steam", "ECORIDE-NYC"])
 
 # Actualizar el estado de la página
 state.page = pagina_adicional_seleccionada
