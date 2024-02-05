@@ -89,8 +89,8 @@ def home_page():
             Hello and thank you for visiting my website. My name is Juan Carlos V, but my family calls me Carlos or Charles.
             Here you will find a sample of some of the projects I have developed throughout my career as a data scientist.
             I have practical experience in a wide variety of projects, using tools such as Python, SQL, and Google Cloud, among other sector technologies. My work has ranged from ETL tasks to Data Engineering and Analysis.
-            Additionally, I have knowledge in Machine Learning and I have a keen interest in delving into areas such as Artificial Intelligence and Deep Learning. I am passionate about this field and I am convinced that there is always more to learn. I constantly seek ways to contribute knowledge and add value to teams.
-            I hope you enjoy exploring my projects!
+            Additionally, I have knowledge in Machine Learning and I have a keen interest in delving into areas such as Artificial Intelligence and Deep Learning. I am passionate about this field and I am convinced that there is always more to learn. 
+            I constantly seek ways to contribute my knowledge and add value to the teams I collaborate with.
             """)
 
         # Contact section in English
