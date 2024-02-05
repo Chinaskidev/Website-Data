@@ -96,7 +96,7 @@ def home_page():
         # Contact section in English
         with st.container():
             st.write("---")
-            st.header("Contacto")
+            st.header("Contact")
             cols= st.columns(3)
 
             # Github
