@@ -2,12 +2,13 @@ import streamlit as st
 from PIL import Image
 import json
 from streamlit_lottie import st_lottie
+from app1 import ecoride_page 
 
 
 # Page Setup 
 # Image In Sidebar 
 with st.sidebar.container():
-    image = Image.open(r"animation/sidebymanos.png")  
+    image = Image.open(r"img/sidebymanos.png")  
     st.image(image, use_column_width=True)
 
 # Lista de páginas
@@ -15,6 +16,7 @@ paginas = ["Español", "English"]
 
 # Selector de página
 pagina_seleccionada = st.sidebar.selectbox("Elige un idioma / Choose a language", paginas)
+
 
 # Función para cargar la animación
 def cargar_animacion(ruta_animacion):
@@ -114,26 +116,55 @@ def vecinonet_page():
                  especialmente aquellas con recursos limitados. El análisis se fundamenta en datos recopilados por ENACOM , 
                  centrándose en comunidades y provincias de bajos recursos en Argentina.""")
         
-        # Enlace a Github
-        st.write("[Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
-
         # Imagen de VecinoNet
-        imagen_vecino = "animation/vecinonet.png"
+        imagen_vecino = "img/vecinonet.png"
         st.image(imagen_vecino, use_column_width=True)
         
+        # Contenido adicional en español    
+        st.markdown("""En este análisis de conectividad a internet, mi enfoque principal se centró en áreas que enfrentan limitaciones de recursos, 
+                 donde las comunidades, especialmente en algunas provincias de Argentina, carecen de acceso a una 
+                 conectividad de calidad. Esta situación puede deberse tanto a limitaciones económicas como a condiciones 
+                 geográficas que dificultan la cobertura de red en esas zonas.""")
         
+        st.markdown("""El análisis se enfoca en las tecnologías que actualmente se utilizan en estas comunidades, independientemente de la velocidad de conexión. 
+                 Observamos que las velocidades de descarga varían ampliamente, desde 3 Mbps hasta 10 Mbps. 
+                 Incluso en la ciudad de Buenos Aires, encontramos disparidades en la calidad de la conexión en diferentes barrios, 
+                 donde algunos pueden tener velocidades de conexión inferiores a 1 Mbps.""")
+        
+        # Imagen de grafico VecinoNet español
+        imagen_vecino_grafi = "charts/gragico_descargainter.png"
+        st.image(imagen_vecino_grafi, use_column_width=True)
+
+        # Enlace a Github
+        st.write("Lee más en [Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
+          
     elif pagina_seleccionada == "English":
         st.header("VecinoNet")
         st.write("""VecinoNet: Networks for Everyone, arises in response to the growing importance of Internet access in the development and education of communities, 
                  especially those with limited resources. The analysis is based on data collected by ENACOM, 
                  focusing on low-income communities and provinces in Argentina.""")
         
-        # Link Github
-        st.write("[Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
-        
         # Imagen de VecinoNet en inglés
-        imagen_vecino = "animation/vecinonet.png"
+        imagen_vecino = "img/vecinonet.png"
         st.image(imagen_vecino, use_column_width=True)
+        
+        # Contenido adicional en inglés
+        st.markdown("""In this analysis of internet connectivity, my main focus was on areas facing resource limitations,
+                    where communities, especially in some provinces of Argentina, lack access to quality connectivity.
+                    This situation may be due to both economic constraints and geographical conditions that hinder network coverage in these areas.""")
+        
+        st.markdown("""The analysis focuses on the technologies currently used in these communities, 
+                    regardless of connection speed. We observe that download speeds vary widely, 
+                    ranging from 3 Mbps to 10 Mbps. Even in the city of Buenos Aires, we find disparities in connection quality across different 
+                    neighborhoods, where some may have connection speeds lower than 1 Mbps.""")
+        
+        # Imagen de grafico VecinoNet español
+        imagen_vecino_grafi = "charts/gragico_descargainter.png"
+        st.image(imagen_vecino_grafi, use_column_width=True)
+        
+        # Enlace a Github
+        st.write("Read more on[Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
+
 
 # Función para mostrar la página de Steam
 def steam_page():
@@ -143,13 +174,30 @@ def steam_page():
                  Se ha implementado un proceso de Extracción, Transformación y Carga (ETL) y un Análisis Exploratorio de Datos (EDA). 
                  El objetivo principal es desplegar una API con un modelo de Machine Learning capaz de analizar los sentimientos a partir de los comentarios de los usuarios. 
                  Este modelo también servirá para ofrecer un sistema de recomendación de videojuegos para la plataforma, mejorando la experiencia de los usuario""")
-        
-        # Enlace a Github
-        st.write("[Github](https://github.com/Chinaskidev/STEAM_Recomendacion)")
 
         # Imagen de  Steam
-        imagen_steam = "animation/steam.png"
+        imagen_steam = "img/steam.png"
         st.image(imagen_steam, use_column_width=True)
+        
+        st.markdown(""""En el proceso del proyecto, se llevó a cabo un Modelo de Recomendación, basado en la similitud del coseno,
+                    donde se crearon las siguientes funciones:""")
+
+        st.markdown("""- Primera Función item-item, introduciendo el id del juego y le devuelve 5 juegos similares al usuario.""")
+
+        st.markdown(""" - Segunda Función de usuario-item, Ingresa el id del usuario y le devuelve 5 juegos recomendados. """)
+                           
+        st.markdown("""Para el primer enfoque del modelo, se establece una relación ítem-ítem. En este escenario, se evalúa un ítem con respecto a su similitud con otros ítems para ofrecer 
+                recomendaciones similares. En este caso, el input corresponde a un juego y el output es una lista de juegos recomendados, 
+                utilizando el concepto de similitud del coseno.""")        
+
+        st.markdown("""Por otra parte, se considera una segunda propuesta para el sistema de recomendación,
+                basada en el filtro user-item. En esta estrategia, se analiza a un usuario para identificar usuarios con gustos similares y se recomiendan 
+                ítems que hayan sido apreciados por estos usuarios afines.""")   
+        
+        # Enlace a video    
+        st.write("Puedes ver el Deploy en [Video](https://www.loom.com/share/8cfd463c84d24f748390800dc3718fbb?sid=4625d89b-43ee-4693-89ec-193e66c28301)")
+        # Enlace a Github
+        st.write("Lee más en [Github](https://github.com/Chinaskidev/STEAM_Recomendacion)")
         
         
     elif pagina_seleccionada == "English":
@@ -159,48 +207,31 @@ def steam_page():
                  The main objective is to deploy an API with a Machine Learning model capable of analyzing sentiments from user comments. 
                  This model will also serve to offer a video game recommendation system for the platform, improving the user experience""")
         
-        # Link Github
-        st.write("[Github](https://github.com/Chinaskidev/STEAM_Recomendacion)")
-
         # Imagen de Steam en inglés
-        imagen_steam = "animation/steam.png"
+        imagen_steam = "img/steam.png"
         st.image(imagen_steam, use_column_width=True)
-
-# Función para mostrar la página Dataminds
-def ecoride_page():
-    if pagina_seleccionada == "Español":
-        st.header("ECORIDE-NYC")
-        st.write("""En la actualidad, los servicios de taxis y viajes compartidos en la ciudad de Nueva York han emergido como alternativas populares al transporte público. 
-                 Estos servicios no solo proporcionan una valiosa fuente de datos sobre la ubicación de los vehículos, 
-                 sino también información relevante sobre la calificación de los conductores, 
-                 las ganancias diarias y mensuales de los taxis convencionales en diversos boroughs de la ciudad de Nueva York, 
-                 así como la autonomía, eficiencia y costos asociados a los autos eléctricos. 
-                 El análisis de estos datos puede ofrecer percepciones clave sobre los cambios en los patrones de viaje, 
-                 particularmente en el contexto de la evolución postpandemia y la creciente adopción de modelos de trabajo flexibles.""")
         
+        # Additional content in English
+        st.markdown("""In the project process, a Recommendation Model was 
+                    implemented based on cosine similarity, where the following functions were created:""")
+        
+        st.markdown("""- First Function item-item, inputting the game ID and returning 5 similar games to the user.""")
+
+        st.markdown("""- Second user-item Function, inputs the user ID and returns 5 recommended games.""")
+        
+        st.markdown("""For the first model approach, an item-item relationship is established. In this scenario, an item is evaluated with respect to its similarity to other items to provide similar recommendations. 
+                    In this case, the input corresponds to a game, and the output is a list of recommended games, 
+                    using the concept of cosine similarity.""")   
+        
+        st.markdown("""On the other hand, a second proposal for the recommendation system is considered, based on the user-item filter. 
+                    In this strategy, a user is analyzed to identify users with similar tastes, 
+                    and items appreciated by these like-minded users are recommended.""") 
+        
+        # Enlace a video    
+        st.write("You can see the deployment at [Video](https://www.loom.com/share/8cfd463c84d24f748390800dc3718fbb?sid=4625d89b-43ee-4693-89ec-193e66c28301)")
         # Enlace a Github
-        st.write("[Github](https://github.com/Chinaskidev/Dataminds-Consulting)")
+        st.write("Read more on [Github](https://github.com/Chinaskidev/STEAM_Recomendacion)")      
 
-        # Imagen de VecinoNet
-        imagen_vecino = "animation/taxi.jpg"
-        st.image(imagen_vecino, use_column_width=True)
-        
-        
-    elif pagina_seleccionada == "English":
-        st.header("ECORIDE-NYC")
-        st.write("""Currently, taxi and ridesharing services in New York City have emerged as popular alternatives to public transportation. 
-                 These services not only provide valuable data on vehicle locations but also relevant information on driver ratings,
-                 daily and monthly earnings of conventional taxis in various boroughs of New York City, as well as the autonomy, 
-                 efficiency, and costs associated with electric vehicles. 
-                 Analyzing this data can offer key insights into changes in travel patterns, particularly in the context of post-pandemic 
-                 evolution and the growing adoption of flexible work models.""")
-        
-        # Link Github
-        st.write("[Github](https://github.com/Chinaskidev/Dataminds-Consulting)")
-        
-        # Imagen de VecinoNet en inglés
-        imagen_vecino = "animation/taxi.jpg"
-        st.image(imagen_vecino, use_column_width=True)
 
 # Obtener el estado de la sesión
 state = get_state()
@@ -219,4 +250,5 @@ elif state.page == 'VecinoNet':
 elif state.page == 'Steam':
     steam_page()
 elif state.page == 'ECORIDE-NYC':
-    ecoride_page()
+    ecoride_page(pagina_seleccionada)
+

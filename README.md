@@ -1,1 +1,1 @@
-![Construccion](animation/logo.png)
+![Construccion](img/logo.png)
