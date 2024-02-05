@@ -53,24 +53,28 @@ def home_page():
             ¡Espero que disfrutes explorando mis proyectos!
             """)
 
-        # Sección de objetivo en español
+        # Sección de contacto en español
+        
+        
         with st.container():
             st.write("---")
-            left_column, right_column = st.columns(2)
-            with left_column:
-                st.header("Contacto")
-                st.markdown("""
-                [Github](https://github.com/Chinaskidev)
-                [LinkedIn](https://www.linkedin.com/in/juancarlosvz/)
-                [Email](mailto:juangreen17@gmail.com)
-                """,
-                unsafe_allow_html=True
-            )
-    # imagen de abajo
-        with right_column:
-            ruta_animacion = "animation/Animation - 1706591655553.json"
-            animacion = cargar_animacion(ruta_animacion)
-            st_lottie(animacion)
+            st.header("Contacto")
+            cols= st.columns(3)
+
+            # Github
+            cols[0].image("img/github.png", width=90)
+            cols[0].markdown("[Github](https://github.com/Chinaskidev)")
+
+            # LinkedIn
+            cols[1].image("img/linkedin.png", width=90)
+            cols[1].markdown("[LinkedIn](https://www.linkedin.com/in/juancarlosvz/)")
+
+            # Email
+            cols[2].image("img/Gmail.png", width=90)
+            cols[2].markdown("[Email](mailto:juangreen17@gmail.com)")            
+                                
+                
+    
 
     # Contenido de la página en inglés
     elif pagina_seleccionada == "English":
@@ -89,24 +93,23 @@ def home_page():
             I hope you enjoy exploring my projects!
             """)
 
-        # Objective section in English
+        # Contact section in English
         with st.container():
             st.write("---")
-            left_column, right_column = st.columns(2)
-            with left_column:
-                st.header("Contact")
-                st.markdown("""
-                [Github](https://github.com/Chinaskidev)
-                [LinkedIn](https://www.linkedin.com/in/juancarlosvz/)
-                [Email](mailto:juangreen17@gmail.com)
-                """,
-                unsafe_allow_html=True
-            )
+            st.header("Contacto")
+            cols= st.columns(3)
 
-            with right_column:
-                animation_path = "animation/Animation - 1706591655553.json"
-                animation = cargar_animacion(animation_path)
-                st_lottie(animation)
+            # Github
+            cols[0].image("img/github.png", width=90)
+            cols[0].markdown("[Github](https://github.com/Chinaskidev)")
+
+            # LinkedIn
+            cols[1].image("img/linkedin.png", width=90)
+            cols[1].markdown("[LinkedIn](https://www.linkedin.com/in/juancarlosvz/)")
+
+            # Email
+            cols[2].image("img/Gmail.png", width=90)
+            cols[2].markdown("[Email](mailto:juangreen17@gmail.com)")   
 
 # Funciones para mostrar las páginas de proyectos                
 def vecinonet_page():
