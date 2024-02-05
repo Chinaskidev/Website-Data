@@ -205,30 +205,34 @@ def steam_page():
         
     elif pagina_seleccionada == "English":
         st.header("Steam")
-        st.write("""This project focuses on the development of a recommendation system for the STEAM video game platform, where the role of MLOps Engineer has been assumed. 
-                 An Extraction, Transformation and Load (ETL) process and an Exploratory Data Analysis (EDA) have been implemented. 
-                 The main objective is to deploy an API with a Machine Learning model capable of analyzing sentiments from user comments. 
-                 This model will also serve to offer a video game recommendation system for the platform, improving the user experience""")
+        st.write("""This project focuses on the development of a recommended system for the STEAM video game platform, 
+                 where the role of MLOps Engineer has been assumed. An Extraction, 
+                 Transformation and Load (ETL) process and an Exploratory Data Analysis (EDA) 
+                 have been implemented. The main objective is to deploy an API with a Machine Learning model, 
+                 capable of analyzing sentiments from user comments. 
+                 This model will also serve to offer a video game recommended system for the platform, 
+                 which will lead to improving the user experience.""")
         
         # Imagen de Steam en inglés
         imagen_steam = "img/steam.png"
         st.image(imagen_steam, use_column_width=True)
         
         # Additional content in English
-        st.markdown("""In the project process, a Recommendation Model was 
-                    implemented based on cosine similarity, where the following functions were created:""")
+        st.markdown("""In the project process, a Recommendation Model 
+                    was implemented based on cosine similarity, where the following functions were created:""")
         
         st.markdown("""- First Function item-item, inputting the game ID and returning 5 similar games to the user.""")
 
         st.markdown("""- Second user-item Function, inputs the user ID and returns 5 recommended games.""")
         
-        st.markdown("""For the first model approach, an item-item relationship is established. In this scenario, an item is evaluated with respect to its similarity to other items to provide similar recommendations. 
-                    In this case, the input corresponds to a game, and the output is a list of recommended games, 
-                    using the concept of cosine similarity.""")   
+        st.markdown("""For the first model approach, an item-item relationship is established. 
+                    In this scenario, an item is evaluated with respect to its similarity to other items to provide similar recommendations. 
+                    In this case, the input corresponds to a game, and the output is a list of recommended games, using the concept of cosine similarity.
+                    """)   
         
         st.markdown("""On the other hand, a second proposal for the recommendation system is considered, based on the user-item filter. 
-                    In this strategy, a user is analyzed to identify users with similar tastes, 
-                    and items appreciated by these like-minded users are recommended.""") 
+                    Using this method, a user is analyzed to identify other users with similar tastes and items that have been recommended by these similar users.  
+                    When a player finishes playing a game, the platform will recommend other games that were chosen by other users.""") 
         
         # Enlace a video    
         st.write("You can see the deployment at [Video](https://www.loom.com/share/8cfd463c84d24f748390800dc3718fbb?sid=4625d89b-43ee-4693-89ec-193e66c28301)")
