@@ -8,7 +8,7 @@ from app1 import ecoride_page
 # Page Setup 
 # Image In Sidebar 
 with st.sidebar.container():
-    image = Image.open(r"img/sidebymanos.png")  
+    image = Image.open(r"img/yo.jpg")  
     st.image(image, use_column_width=True)
 
 # Lista de páginas
