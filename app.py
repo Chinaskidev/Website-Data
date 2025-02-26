@@ -9,7 +9,7 @@ from app1 import agente_page
 # Image In Sidebar 
 with st.sidebar.container():
     image = Image.open(r"img/charles.jpg")  
-    st.image(image, use_container_width=True)
+    st.image(image)
 
 # Lista de páginas
 paginas = ["Español", "English"]
