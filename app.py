@@ -128,7 +128,7 @@ def vecinonet_page():
         
         # Imagen de VecinoNet
         imagen_vecino = "img/vecinonet.png"
-        st.image(imagen_vecino, use_column_width=True)
+        st.image(imagen_vecino)
         
         # Contenido adicional en español    
         st.markdown("""En este análisis de conectividad a internet, mi enfoque principal se centró en áreas que enfrentan limitaciones de recursos, 
@@ -143,7 +143,7 @@ def vecinonet_page():
         
         # Imagen de grafico VecinoNet español
         imagen_vecino_grafi = "charts/gragico_descargainter.png"
-        st.image(imagen_vecino_grafi, use_column_width=True)
+        st.image(imagen_vecino_grafi)
 
         # Enlace a Github
         st.write("Lee más en [Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
@@ -156,7 +156,7 @@ def vecinonet_page():
         
         # Imagen de VecinoNet en inglés
         imagen_vecino = "img/vecinonet.png"
-        st.image(imagen_vecino, use_column_width=True)
+        st.image(imagen_vecino)
         
         # Contenido adicional en inglés
         st.markdown("""In this analysis of internet connectivity, my main focus was on areas facing resource limitations,
@@ -170,7 +170,7 @@ def vecinonet_page():
         
         # Imagen de grafico VecinoNet español
         imagen_vecino_grafi = "charts/gragico_descargainter.png"
-        st.image(imagen_vecino_grafi, use_column_width=True)
+        st.image(imagen_vecino_grafi)
         
         # Enlace a Github
         st.write("Read more on[Github](https://github.com/Chinaskidev/VecinoNet_Proyecto)")
@@ -209,7 +209,7 @@ def SivarETH_page():
 
         # Imagen de  Steam
         imagen_SivarETH = "img/sivar.jpg"
-        st.image(imagen_SivarETH, use_container_width=True)
+        st.image(imagen_SivarETH)
         
         
         # Enlace a Github
@@ -248,7 +248,7 @@ def SivarETH_page():
         
         # Imagen de Steam en inglés
         imagen_SivarETH = "img/sivar.jpg"
-        st.image(imagen_SivarETH, use_container_width=True)
+        st.image(imagen_SivarETH)
         
         
         # Enlace a Github

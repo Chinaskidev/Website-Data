@@ -21,7 +21,7 @@ def agente_page(pagina_seleccionada):
         
         # Imagen de agente
         imagen_agente = "img/eliza_diagram.png"
-        st.image(imagen_agente, use_container_width=True)
+        st.image(imagen_agente)
         
         
         
@@ -49,7 +49,7 @@ def agente_page(pagina_seleccionada):
         
         # Imagen de agente
         imagen_agente = "img/eliza_diagram.png"
-        st.image(imagen_agente, use_container_width=True)
+        st.image(imagen_agente)
         
         
         # Enlace a Github
